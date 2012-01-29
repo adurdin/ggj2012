@@ -14,6 +14,25 @@ public class FinalBoss : MonoBehaviour {
 	private bool postEvading = false;
 	private Vector3 evadeDirection = Vector3.zero;
 	private float timer;
+	
+	public GameObject ExplosionPrefab;
+	public GameObject soundObject;
+	
+	void OnTriggerEnter(Collider other) 
+	{
+		print (this.gameObject.name);
+		if (other.gameObject.layer == 9) 
+		{ 
+			// player bullets
+			// Die
+			Destroy(this.gameObject);
+			// Also destroy the player's bullet
+			Destroy(other.gameObject);
+			Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
+			soundObject.audio.Play();
+			((FadeAndDefeat)(Camera.mainCamera.GetComponent("FadeAndDefeat"))).FadeToBlack();
+		}
+	}
 
 	// Use this for initialization
 	void Start () {

@@ -21,7 +21,7 @@ public class PlayerCollisionDetector : MonoBehaviour {
 				// enemy bullets
 				Destroy(other.gameObject);
 			}
-			health -= 1;
+			// health -= 1;
 			if (health <= 0) {
 				// Kill the player
 				Destroy(gameObject);

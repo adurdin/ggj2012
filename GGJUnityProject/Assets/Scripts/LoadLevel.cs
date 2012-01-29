@@ -11,7 +11,7 @@ public class LoadLevel : MonoBehaviour
 		"Assets/Data/level0.map",
 		"Assets/Data/level1.map",
 		"Assets/Data/level2.map",
-		"Assets/Data/level3.map",
+		"Assets/Data/level0.map",
 	};
 	
 	public GameObject SpinnerBall;
@@ -155,12 +155,12 @@ public class LoadLevel : MonoBehaviour
 			entity = Instantiate(SpinnerBall, spawnPosition, Quaternion.identity);
 		} else if (enemyAttributes[0].Equals("enemy2")) {
 			entity = Instantiate(Darter, spawnPosition, Quaternion.identity);
-		} else if (enemyAttributes[0].Equals("enemy3")) {
+		} else if (enemyAttributes[0].Equals("enemy3") || true) {
 			entity = Instantiate(Dolphin, spawnPosition, Quaternion.identity);
 		} else if (enemyAttributes[0].Equals("enemy4")) {
-			entity = Instantiate(Langolier, spawnPosition, Quaternion.identity);
+//			entity = Instantiate(Langolier, spawnPosition, Quaternion.identity);
 		} else if (enemyAttributes[0].Equals("enemy5") || true) {
-			entity = Instantiate(LittleChopperOrThePeriscopeThatCould, spawnPosition, Quaternion.identity);
+//			entity = Instantiate(LittleChopperOrThePeriscopeThatCould, spawnPosition, Quaternion.identity);
 		} 
 		
 		// Assign the specified (OH MY GOD P EEEEEYES) path and speed
