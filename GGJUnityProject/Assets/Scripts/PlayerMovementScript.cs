@@ -26,6 +26,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		
         //moving left and right
         float inputX = Input.GetAxis("Horizontal") * baseSpeed;
+		inputX += VirtualJoystickRegion.VJRnormals.x * baseSpeed;
         inputX *= (Time.deltaTime) ;
         if (inputX > 0)
         {
@@ -58,6 +59,7 @@ public class PlayerMovementScript : MonoBehaviour {
 
         //moving up and down
         float inputY = Input.GetAxis("Vertical") * baseSpeed;
+		inputY += VirtualJoystickRegion.VJRnormals.y * baseSpeed;
         inputY *= Time.deltaTime;
 
         if (inputY > 0)

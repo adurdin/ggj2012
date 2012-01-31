@@ -129,7 +129,7 @@ public class GuiScript : MonoBehaviour {
 
 
             //player life
-            GUI.DrawTexture(new Rect(77, Screen.height - 105, 154, 85), GaugeTexture);
+            GUI.DrawTexture(new Rect(77, 15, 154, 85), GaugeTexture);
 
             Matrix4x4 matrixBackup = GUI.matrix;
 
@@ -137,9 +137,9 @@ public class GuiScript : MonoBehaviour {
 
             int iAngle = -91 + Mathf.RoundToInt((100 - Globals.PlayerLife) * 1.8F);
 
-            GUIUtility.RotateAroundPivot(iAngle, new Vector2( 90 + 35, Screen.height - 140 + 73));
+            GUIUtility.RotateAroundPivot(iAngle, new Vector2( 90 + 35, 50 + 2));
 
-            GUI.DrawTexture(new Rect( 90, Screen.height - 140 + 71, 70, 5), ArrowTexture);
+            GUI.DrawTexture(new Rect( 90, 50, 70, 5), ArrowTexture);
 
             GUI.matrix = matrixBackup;
 
@@ -149,9 +149,9 @@ public class GuiScript : MonoBehaviour {
             if (Globals.CurrentBossLife > -1)
             {
 
-                GUI.DrawTexture(new Rect(Screen.width - 77 - 154, Screen.height - 105, 154, 85), GaugeTextureBoss);
+                GUI.DrawTexture(new Rect(Screen.width - 77 - 154, 15, 154, 85), GaugeTextureBoss);
 
-               // matrixBackup = GUI.matrix;
+               matrixBackup = GUI.matrix;
 
                 int iAngleBoss = -92 + ( Mathf.RoundToInt( (100 - Globals.CurrentBossLife) * -1.8F)) ;
 
@@ -160,9 +160,9 @@ public class GuiScript : MonoBehaviour {
                 //    iAngleBoss -= Globals.PlayerLife;
                 //}
 
-                GUIUtility.RotateAroundPivot(iAngleBoss, new Vector2(Screen.width - 159 + 35, Screen.height - 70 + 2));
+                // GUIUtility.RotateAroundPivot(iAngleBoss, new Vector2(Screen.width - 159, 50 + 2));
 
-                GUI.DrawTexture(new Rect(Screen.width -  159, Screen.height - 70, 70, 5), ArrowTexture);
+                GUI.DrawTexture(new Rect(Screen.width -  159, 50, 70, 5), ArrowTexture);
 
                 GUI.matrix = matrixBackup;
 
@@ -171,7 +171,7 @@ public class GuiScript : MonoBehaviour {
             }
 
 
-            //' GUI.DrawTexture(new Rect(Screen.width - 120, Screen.height - 120, 100, 100), );
+            //' GUI.DrawTexture(new Rect(Screen.width - 120, 120, 100, 100), );
         }
     }
 }

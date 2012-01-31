@@ -12,7 +12,7 @@ public class PlayerWeaponControls : MonoBehaviour
 	void Update () 
 	{
 		PlayerWeapon playerWeapon = ((PlayerWeapon)currentPlayerWeapon.GetComponent("PlayerWeapon"));
-		if(Input.GetKey("space") == true && playerWeapon.CanFire())
+		if((Input.GetKey("space") == true || VirtualButtonRegion.VBpressed) && playerWeapon.CanFire())
 		{
 			playerWeapon.Fire(transform.position, Vector3.right, transform.rotation);
 			
